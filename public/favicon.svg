@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Golden Hive Capital monogram">
+  <defs>
+    <linearGradient id="goldGradient" x1="90" y1="80" x2="430" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7E7A6"/>
+      <stop offset="0.45" stop-color="#D6BC63"/>
+      <stop offset="1" stop-color="#A8862C"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g id="ghc-loader-logo" filter="url(#softGlow)">
+    <polygon id="hexagon" points="256.00,84.00 387.64,160.00 387.64,312.00 256.00,388.00 124.36,312.00 124.36,160.00"
+      stroke="url(#goldGradient)" stroke-width="16" stroke-linejoin="miter" fill="none"/>
+
+    <g id="monogram" fill="url(#goldGradient)">
+      <text x="145" y="250"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="155"
+        font-weight="500"
+        letter-spacing="-12">G</text>
+      <text x="235" y="300"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="150"
+        font-weight="500"
+        letter-spacing="-10">H</text>
+      <rect x="241" y="223" width="26" height="113" rx="2"/>
+      <rect x="317" y="205" width="24" height="130" rx="2"/>
+    </g>
+  </g>
+</svg>

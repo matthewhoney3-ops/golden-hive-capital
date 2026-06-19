@@ -1,0 +1,190 @@
+[
+  {
+    "id": "lofts-on-thomas-410",
+    "status": "available",
+    "title": "Lofts on Thomas, Unit 410",
+    "address": {
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85013",
+      "neighborhood": "Willo / Lofts on Thomas",
+      "street": "535 W Thomas Rd #410",
+      "showStreetPublicly": true
+    },
+    "price": 2200,
+    "priceLabel": "per month",
+    "availableDate": "2026-10-01",
+    "specs": {
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1141,
+      "yearBuilt": 2008,
+      "parking": "2 assigned covered spots"
+    },
+    "construction": {
+      "type": "concrete-block",
+      "note": "Block construction with stucco exterior, built 2008. Notably quiet for a midtown building."
+    },
+    "utilities": {
+      "tenantPays": ["Electric", "Internet"],
+      "landlordPays": ["Water", "Sewer", "Trash"]
+    },
+    "leaseTerms": {
+      "minLeaseMonths": 6,
+      "renewalNote": "Renewal subject to mutual agreement, not automatic",
+      "rentDueDay": 1,
+      "gracePeriodDays": 5,
+      "securityDeposit": "Negotiable",
+      "petPolicy": "$300 refundable pet deposit",
+      "smokingPolicy": "No smoking allowed inside the unit or on balconies",
+      "maintenanceNote": "Tenant is responsible for minor maintenance (e.g. light bulbs, batteries) and must promptly notify the landlord of any issues. Landlord is responsible for HVAC, water heater, and structural repairs.",
+      "entryNotice": "Landlord provides 2-day written notice before entry, per Arizona law. Emergency entry without notice is permitted (e.g. flooding, fire).",
+      "occupancyLimit": "Max 4 occupants for this 2-bedroom unit. All occupants must be listed on the lease.",
+      "applicationRequirements": "Monthly income of at least 3x rent (negotiable depending on the overall application), credit score of 620+, and background, criminal, and eviction checks.",
+      "terminationNotice": "30-day written notice required to terminate at the end of the lease term. Early termination only by mutual agreement or applicable penalty."
+    },
+    "description": "Live in the heart of Midtown Phoenix at the Lofts on Thomas, in this modern, upgraded 2-bedroom, 2-bathroom condo perfectly located near restaurants, the light rail, hospitals, and downtown. The open-concept layout and contemporary finishes carry through a kitchen with stainless steel appliances, granite countertops, and ample cabinet space. Natural light fills the living area, and the unit stays notably quiet thanks to the building's high-quality block construction. Walkable to trendy bars, restaurants, and the light rail, with easy access to downtown Phoenix, hospitals, ASU Downtown, and the I-10.",
+    "amenities": [
+      "2 assigned covered parking spots",
+      "In-unit washer & dryer",
+      "Secure gated building, controlled access",
+      "Pool, fitness center, BBQ area & clubhouse",
+      "Downtown views",
+      "Walkable to light rail, bars & restaurants"
+    ],
+    "media": {
+      "coverImage": "/properties/lofts-on-thomas-410/cover.jpg",
+      "videos": [],
+      "gallery": [
+        "/properties/lofts-on-thomas-410/01.jpg",
+        "/properties/lofts-on-thomas-410/02.jpg",
+        "/properties/lofts-on-thomas-410/04.jpg",
+        "/properties/lofts-on-thomas-410/05.jpg",
+        "/properties/lofts-on-thomas-410/06.jpg",
+        "/properties/lofts-on-thomas-410/07.jpg",
+        "/properties/lofts-on-thomas-410/08.jpg",
+        "/properties/lofts-on-thomas-410/09.jpg",
+        "/properties/lofts-on-thomas-410/10.jpg",
+        "/properties/lofts-on-thomas-410/11.jpg",
+        "/properties/lofts-on-thomas-410/12.jpg",
+        "/properties/lofts-on-thomas-410/13.jpg",
+        "/properties/lofts-on-thomas-410/14.jpg",
+        "/properties/lofts-on-thomas-410/15.jpg",
+        "/properties/lofts-on-thomas-410/16.jpg",
+        "/properties/lofts-on-thomas-410/17.jpg",
+        "/properties/lofts-on-thomas-410/18.jpg",
+        "/properties/lofts-on-thomas-410/19.jpg",
+        "/properties/lofts-on-thomas-410/20.jpg",
+        "/properties/lofts-on-thomas-410/21.jpg",
+        "/properties/lofts-on-thomas-410/22.jpg",
+        "/properties/lofts-on-thomas-410/23.jpg",
+        "/properties/lofts-on-thomas-410/24.jpg",
+        "/properties/lofts-on-thomas-410/25.jpg",
+        "/properties/lofts-on-thomas-410/26.jpg",
+        "/properties/lofts-on-thomas-410/27.jpg",
+        "/properties/lofts-on-thomas-410/28.jpg",
+        "/properties/lofts-on-thomas-410/29.jpg",
+        "/properties/lofts-on-thomas-410/30.jpg",
+        "/properties/lofts-on-thomas-410/31.jpg",
+        "/properties/lofts-on-thomas-410/32.jpg",
+        "/properties/lofts-on-thomas-410/33.jpg",
+        "/properties/lofts-on-thomas-410/34.jpg",
+        "/properties/lofts-on-thomas-410/35.jpg",
+        "/properties/lofts-on-thomas-410/36.jpg",
+        "/properties/lofts-on-thomas-410/37.jpg",
+        "/properties/lofts-on-thomas-410/38.jpg",
+        "/properties/lofts-on-thomas-410/39.jpg",
+        "/properties/lofts-on-thomas-410/40.jpg",
+        "/properties/lofts-on-thomas-410/41.jpg",
+        "/properties/lofts-on-thomas-410/42.jpg",
+        "/properties/lofts-on-thomas-410/43.jpg",
+        "/properties/lofts-on-thomas-410/44.jpg",
+        "/properties/lofts-on-thomas-410/45.jpg",
+        "/properties/lofts-on-thomas-410/46.jpg"
+      ]
+    },
+    "location": {
+      "lat": 33.4804,
+      "lng": -112.0818,
+      "streetViewEmbedUrl": "https://www.google.com/maps/embed?pb=!4v1781832129521!6m8!1m7!1s3aI6D8_lmrppBxvIyfnsFg!2m2!1d33.48040338346259!2d-112.0817178021738!3f210.70067912022765!4f4.291475936074292!5f0.7820865974627469"
+    },
+    "featured": true,
+    "sortOrder": 1
+  },
+  {
+    "id": "bridgeview-1102",
+    "status": "leased",
+    "title": "Bridgeview, Unit 1102",
+    "address": {
+      "city": "Tempe",
+      "state": "AZ",
+      "zip": "85281",
+      "neighborhood": "Bridgeview, Downtown Tempe",
+      "street": "140 E Rio Salado Pkwy Unit 1102",
+      "showStreetPublicly": false
+    },
+    "price": 2500,
+    "priceLabel": "per month",
+    "specs": {
+      "beds": 1,
+      "baths": 2,
+      "sqft": 1184,
+      "yearBuilt": 2008,
+      "parking": "1 reserved underground space"
+    },
+    "construction": {
+      "type": "steel-frame",
+      "note": "Steel-and-concrete high-rise construction with 7.5-inch concrete floors and triple-pane windows, built 2008"
+    },
+    "utilities": {
+      "tenantPays": ["Internet"],
+      "landlordPays": ["Electric", "Water", "Sewer", "Trash"]
+    },
+    "description": "Perched in the Bridgeview high-rise on Tempe Town Lake, this 1-bedroom, 2-bathroom condo takes in sweeping views of the water, mountains, and city lights from its private balcony. The open layout pairs floor-to-ceiling windows with upscale finishes, and the building's steel-and-concrete construction keeps things remarkably quiet for a downtown tower. Residents have access to a 24-hour concierge, a heated pool and spa, a full fitness center with sauna, and gated underground parking, all an easy walk to Mill Avenue, ASU, and the light rail.",
+    "amenities": [
+      "24-hour concierge",
+      "Heated pool & spa",
+      "Fitness center with sauna",
+      "Gated underground parking",
+      "Tempe Town Lake views",
+      "Walk to Mill Ave, ASU & light rail"
+    ],
+    "media": {
+      "coverImage": "/properties/bridgeview-1102/cover.jpg",
+      "videos": [],
+      "gallery": [
+        "/properties/bridgeview-1102/01.jpg",
+        "/properties/bridgeview-1102/02.jpg",
+        "/properties/bridgeview-1102/03.jpg",
+        "/properties/bridgeview-1102/04.jpg",
+        "/properties/bridgeview-1102/05.jpg",
+        "/properties/bridgeview-1102/06.jpg",
+        "/properties/bridgeview-1102/07.jpg",
+        "/properties/bridgeview-1102/08.jpg",
+        "/properties/bridgeview-1102/09.jpg",
+        "/properties/bridgeview-1102/10.jpg",
+        "/properties/bridgeview-1102/11.jpg",
+        "/properties/bridgeview-1102/12.jpg",
+        "/properties/bridgeview-1102/13.jpg",
+        "/properties/bridgeview-1102/14.jpg",
+        "/properties/bridgeview-1102/15.jpg",
+        "/properties/bridgeview-1102/16.jpg",
+        "/properties/bridgeview-1102/17.jpg",
+        "/properties/bridgeview-1102/18.jpg",
+        "/properties/bridgeview-1102/19.jpg",
+        "/properties/bridgeview-1102/20.jpg",
+        "/properties/bridgeview-1102/21.jpg",
+        "/properties/bridgeview-1102/22.jpg",
+        "/properties/bridgeview-1102/23.jpg",
+        "/properties/bridgeview-1102/24.jpg"
+      ]
+    },
+    "location": {
+      "lat": 33.4313,
+      "lng": -111.9366,
+      "streetViewEmbedUrl": "https://www.google.com/maps/embed?pb=!4v1781834286359!6m8!1m7!1sEGkrMY-jaUZs1uJO3Ef44g!2m2!1d33.43071254999682!2d-111.9366154170353!3f356.03300588545426!4f37.86660026612469!5f0.7820865974627469"
+    },
+    "featured": false,
+    "sortOrder": 2
+  }
+]
