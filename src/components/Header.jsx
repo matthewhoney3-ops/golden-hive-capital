@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import logoMark from '../assets/logo-mark.svg'
+import logoFull from '../assets/logo-full.png'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -12,12 +12,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-20 bg-ink/90 backdrop-blur-md border-b border-hairline">
       <div className="max-w-[1180px] mx-auto px-8 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3.5">
-          <img src={logoMark} width={38} height={38} alt="Golden Hive Capital monogram" />
-          <span className="flex flex-col leading-tight">
-            <span className="font-display font-semibold text-lg tracking-[0.12em] gold-text">Golden Hive</span>
-            <span className="hairline-flank text-[10px] tracking-[0.32em] text-muted-2 mt-1">CAPITAL</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logoFull} alt="Golden Hive Capital" className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide">
