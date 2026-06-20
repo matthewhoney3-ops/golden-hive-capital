@@ -10,16 +10,21 @@ const navLinks = [
   { to: '/contact', label: 'Contact' },
 ]
 
+// How many pixels of scroll the shrink animation is spread across.
+// Bigger number = more gradual.
+const SHRINK_RANGE = 140
+
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [progress, setProgress] = useState(0) // 0 = top of page, 1 = fully shrunk
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 60)
+      setProgress(Math.min(window.scrollY / SHRINK_RANGE, 1))
     }
-    window.addEventListener('scroll', onScroll)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -27,22 +32,36 @@ export default function Header() {
     setMenuOpen(false)
   }, [location.pathname])
 
+  const compact = progress >= 1
+  const paddingY = 16 - 8 * progress // px: 16 at top -> 8 once fully shrunk
+  const logoBoxHeight = 112 - 72 * progress // px: 112 at top -> 40 once fully shrunk
+
   return (
     <header className="sticky top-0 z-20 bg-ink/90 backdrop-blur-md border-b border-hairline">
       <div
-        className={`max-w-[1180px] mx-auto px-8 flex items-center justify-between transition-all duration-300 ${
-          scrolled ? 'py-2' : 'py-4'
-        }`}
+        className="max-w-[1180px] mx-auto px-8 flex items-center justify-between"
+        style={{ paddingTop: paddingY, paddingBottom: paddingY, transition: 'padding 80ms linear' }}
       >
-        <Link to="/" className="flex items-center">
-          {scrolled ? (
-            <img src={logoMark} alt="Golden Hive Capital" className="h-9 w-auto" />
-          ) : (
-            <img src={logoFull} alt="Golden Hive Capital" className="h-28 w-auto transition-all duration-300" />
-          )}
+        <Link to="/" className="relative flex items-center" style={{ height: logoBoxHeight }}>
+          <img
+            src={logoFull}
+            alt="Golden Hive Capital"
+            style={{
+              height: logoBoxHeight,
+              opacity: 1 - progress,
+              transition: 'opacity 80ms linear, height 80ms linear',
+            }}
+            className="w-auto absolute left-0 top-1/2 -translate-y-1/2"
+          />
+          <img
+            src={logoMark}
+            alt="Golden Hive Capital"
+            style={{ height: 36, opacity: progress, transition: 'opacity 80ms linear' }}
+            className="w-auto absolute left-0 top-1/2 -translate-y-1/2"
+          />
         </Link>
 
-        {!scrolled && (
+        {!compact && (
           <nav className="hidden md:flex items-center divide-x divide-hairline text-xs tracking-[0.18em] uppercase">
             {navLinks.map((link) => (
               <NavLink
@@ -58,7 +77,7 @@ export default function Header() {
           </nav>
         )}
 
-        {!scrolled && (
+        {!compact && (
           <Link
             to="/contact"
             className="hidden md:inline-block gold-fill gold-glow text-[#241B05] font-semibold text-[13px] tracking-wide px-6 py-2.5 rounded-sm"
@@ -70,7 +89,7 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
-          className={`${scrolled ? 'flex' : 'flex md:hidden'} items-center justify-center w-9 h-9 text-ivory`}
+          className={`${compact ? 'flex' : 'flex md:hidden'} items-center justify-center w-9 h-9 text-ivory`}
         >
           {menuOpen ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
