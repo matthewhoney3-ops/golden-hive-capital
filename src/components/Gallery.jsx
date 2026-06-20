@@ -8,7 +8,7 @@ function PlayIcon() {
   )
 }
 
-function Slide({ item, title, className }) {
+function Slide({ item, title, className, loaded, onLoad, onError }) {
   if (item.type === 'video') {
     return (
       <iframe
@@ -21,21 +21,35 @@ function Slide({ item, title, className }) {
     )
   }
   return (
-    <img
-      src={item.src}
-      alt={title || ''}
-      className={`${className} object-cover`}
-      onError={(e) => {
-        e.currentTarget.style.display = 'none'
-      }}
-    />
+    <div className={`${className} relative overflow-hidden`}>
+      {!loaded && <div className="absolute inset-0 skeleton-shimmer" />}
+      <img
+        src={item.src}
+        alt={title || ''}
+        onLoad={onLoad}
+        onError={onError}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+    </div>
   )
 }
 
 export default function Gallery({ items, title, badge = null }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [loadedSrcs, setLoadedSrcs] = useState(() => new Set())
   const thumbRefs = useRef([])
+
+  function markLoaded(src) {
+    setLoadedSrcs((prev) => {
+      if (prev.has(src)) return prev
+      const next = new Set(prev)
+      next.add(src)
+      return next
+    })
+  }
 
   function goTo(index) {
     setActiveIndex(((index % items.length) + items.length) % items.length)
@@ -59,12 +73,20 @@ export default function Gallery({ items, title, badge = null }) {
 
   if (!items.length) return null
   const active = items[activeIndex]
+  const activeLoaded = active.type === 'video' || loadedSrcs.has(active.src)
 
   return (
     <div>
       <div className="relative aspect-[16/9] bg-gradient-to-br from-[#20201c] via-[#2a2a24] to-[#1c1c19] rounded overflow-hidden mb-3">
         <div key={activeIndex} className="absolute inset-0 fade-in">
-          <Slide item={active} title={title} className="absolute inset-0 w-full h-full" />
+          <Slide
+            item={active}
+            title={title}
+            className="absolute inset-0 w-full h-full"
+            loaded={activeLoaded}
+            onLoad={() => markLoaded(active.src)}
+            onError={() => markLoaded(active.src)}
+          />
         </div>
 
         {active.type === 'image' && (
@@ -102,31 +124,38 @@ export default function Gallery({ items, title, badge = null }) {
 
       {items.length > 1 && (
         <div className="flex gap-3 mb-10 overflow-x-auto pb-1">
-          {items.map((item, i) => (
-            <button
-              key={i}
-              ref={(el) => (thumbRefs.current[i] = el)}
-              onClick={() => goTo(i)}
-              className={`relative w-20 h-16 flex-shrink-0 rounded overflow-hidden bg-surface-2 border ${
-                i === activeIndex ? 'border-gold-2' : 'border-white/10'
-              }`}
-            >
-              {item.type === 'video' ? (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <PlayIcon />
-                </div>
-              ) : (
-                <img
-                  src={item.src}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none'
-                  }}
-                />
-              )}
-            </button>
-          ))}
+          {items.map((item, i) => {
+            const thumbLoaded = item.type === 'video' || loadedSrcs.has(item.src)
+            return (
+              <button
+                key={i}
+                ref={(el) => (thumbRefs.current[i] = el)}
+                onClick={() => goTo(i)}
+                className={`relative w-20 h-16 flex-shrink-0 rounded overflow-hidden bg-surface-2 border ${
+                  i === activeIndex ? 'border-gold-2' : 'border-white/10'
+                }`}
+              >
+                {item.type === 'video' ? (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <PlayIcon />
+                  </div>
+                ) : (
+                  <>
+                    {!thumbLoaded && <div className="absolute inset-0 skeleton-shimmer" />}
+                    <img
+                      src={item.src}
+                      alt=""
+                      onLoad={() => markLoaded(item.src)}
+                      onError={() => markLoaded(item.src)}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                        thumbLoaded ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    />
+                  </>
+                )}
+              </button>
+            )
+          })}
         </div>
       )}
 
@@ -173,7 +202,14 @@ export default function Gallery({ items, title, badge = null }) {
             className="fade-in w-full max-w-5xl aspect-[16/9]"
             onClick={(e) => e.stopPropagation()}
           >
-            <Slide item={active} title={title} className="w-full h-full" />
+            <Slide
+              item={active}
+              title={title}
+              className="w-full h-full"
+              loaded={activeLoaded}
+              onLoad={() => markLoaded(active.src)}
+              onError={() => markLoaded(active.src)}
+            />
           </div>
         </div>
       )}

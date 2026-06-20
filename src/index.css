@@ -68,3 +68,17 @@ html {
 .fade-in {
   animation: fadeIn 350ms ease;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.07) 37%, rgba(255, 255, 255, 0.02) 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s linear infinite;
+}

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import StatusPill from './StatusPill.jsx'
 import HexBadge from './HexBadge.jsx'
@@ -7,24 +8,30 @@ import { formatUtilitiesIncluded } from '../lib/utilities.js'
 export default function ListingCard({ property }) {
   const { label: constructionLabel, Icon } = getConstructionMeta(property.construction.type)
   const utilitiesNote = formatUtilitiesIncluded(property.utilities)
+  const [loaded, setLoaded] = useState(false)
+  const [errored, setErrored] = useState(false)
 
   return (
     <div className="bg-surface border border-white/5 rounded overflow-hidden">
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-[#20201c] via-[#2a2a24] to-[#1c1c19] flex items-center justify-center">
+      <div className="relative aspect-[4/3] bg-gradient-to-br from-[#20201c] via-[#2a2a24] to-[#1c1c19] flex items-center justify-center overflow-hidden">
+        {!loaded && !errored && <div className="absolute inset-0 skeleton-shimmer" />}
         <img
           src={property.media.coverImage}
           alt={property.title}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            loaded ? 'opacity-100' : 'opacity-0'
+          }`}
           loading="lazy"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none'
-          }}
+          onLoad={() => setLoaded(true)}
+          onError={() => setErrored(true)}
         />
         <StatusPill status={property.status} />
         <HexBadge icon={<Icon size={20} />} label={constructionLabel} className="absolute top-2.5 right-2.5" />
-        <span className="text-[11px] tracking-wide text-muted-2 border border-dashed border-white/10 px-3 py-1.5 rounded-sm">
-          photo coming soon
-        </span>
+        {errored && (
+          <span className="text-[11px] tracking-wide text-muted-2 border border-dashed border-white/10 px-3 py-1.5 rounded-sm">
+            photo coming soon
+          </span>
+        )}
       </div>
 
       <div className="p-5">
