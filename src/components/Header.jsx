@@ -13,7 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-20 bg-ink/90 backdrop-blur-md border-b border-hairline">
       <div className="max-w-[1180px] mx-auto px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logoFull} alt="Golden Hive Capital" className="h-14 w-auto" />
+          <img src={logoFull} alt="Golden Hive Capital" className="h-28 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide">
