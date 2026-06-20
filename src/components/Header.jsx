@@ -42,7 +42,7 @@ export default function Header() {
         className="max-w-[1180px] mx-auto px-8 flex items-center justify-between"
         style={{ paddingTop: paddingY, paddingBottom: paddingY, transition: 'padding 80ms linear' }}
       >
-        <Link to="/" className="relative flex items-center" style={{ height: logoBoxHeight }}>
+        <Link to="/" className="relative flex items-center" style={{ height: logoBoxHeight, width: 160 }}>
           <img
             src={logoFull}
             alt="Golden Hive Capital"
