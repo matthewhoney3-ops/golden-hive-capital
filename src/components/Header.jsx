@@ -16,12 +16,14 @@ export default function Header() {
           <img src={logoFull} alt="Golden Hive Capital" className="h-28 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide">
+        <nav className="hidden md:flex items-center divide-x divide-hairline text-xs tracking-[0.18em] uppercase">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
-              className={({ isActive }) => (isActive ? 'text-gold-2' : 'text-muted hover:text-gold-2 transition-colors')}
+              className={({ isActive }) =>
+                `px-5 ${isActive ? 'text-gold-2' : 'text-muted hover:text-gold-2 transition-colors'}`
+              }
             >
               {link.label}
             </NavLink>
