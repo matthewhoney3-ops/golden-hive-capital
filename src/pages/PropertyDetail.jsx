@@ -204,6 +204,14 @@ export default function PropertyDetail() {
           {/* Sticky inquiry sidebar */}
           <div>
             <div className="lg:sticky lg:top-24">
+              {property.status === 'available' && (
+                
+                  href={`https://apply.goldenhivecapital.com/apply?property=${encodeURIComponent(property.id)}&label=${encodeURIComponent(property.title)}`}
+                  className="block w-full text-center rounded bg-gold-2 text-neutral-900 font-medium py-3 mb-6"
+                >
+                  Apply now
+                </a>
+              )}
               <h2 className="font-display text-lg mb-4">Inquire about this property</h2>
               <InquiryForm propertyTitle={property.title} />
             </div>
