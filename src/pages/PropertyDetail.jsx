@@ -206,6 +206,7 @@ export default function PropertyDetail() {
             <div className="lg:sticky lg:top-24">
               {property.status === 'available' && (
                 
+                <a
                   href={`https://apply.goldenhivecapital.com/apply?property=${encodeURIComponent(property.id)}&label=${encodeURIComponent(property.title)}`}
                   className="block w-full text-center rounded bg-gold-2 text-neutral-900 font-medium py-3 mb-6"
                 >
