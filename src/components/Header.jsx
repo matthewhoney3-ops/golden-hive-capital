@@ -78,12 +78,20 @@ export default function Header() {
         )}
 
         {!compact && (
-          <Link
-            to="/contact"
-            className="hidden md:inline-block gold-fill gold-glow text-[#241B05] font-semibold text-[13px] tracking-wide px-6 py-2.5 rounded-sm"
-          >
-            Inquire
-          </Link>
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://apply.goldenhivecapital.com/login"
+              className="text-xs tracking-[0.18em] uppercase text-muted hover:text-gold-2 transition-colors"
+            >
+              Tenant portal
+            </a>
+            <Link
+              to="/contact"
+              className="gold-fill gold-glow text-[#241B05] font-semibold text-[13px] tracking-wide px-6 py-2.5 rounded-sm"
+            >
+              Inquire
+            </Link>
+          </div>
         )}
 
         <button
@@ -118,6 +126,12 @@ export default function Header() {
                 {link.label}
               </NavLink>
             ))}
+            <a
+              href="https://apply.goldenhivecapital.com/login"
+              className="text-muted hover:text-gold-2 normal-case"
+            >
+              Tenant portal
+            </a>
             <Link
               to="/contact"
               className="gold-fill gold-glow text-[#241B05] font-semibold text-[13px] tracking-wide px-6 py-2.5 rounded-sm self-start normal-case"
